@@ -142,21 +142,24 @@ void player_angle_move_offset()
 
 void draw_3D(SDL_Renderer* renderer)
 {
-    int px[4], py[4], pz[4];
+   float px[4], py[4], pz[4];
 
     float CS = M.cos[P.angle];
     float SN = M.sin[P.angle];
 
-    int x1 = 40 - P.position.x; int y1 = 10 - P.position.y;
-    int x2 = 40 - P.position.x; int y2 = 290 - P.position.y;
+    float x1 = 40 - P.position.x; int y1 = 10 - P.position.y;
+    float x2 = 40 - P.position.x; int y2 = 290 - P.position.y;
+
+    float centerX = WINDOW_WIDTH / 2;
+    float centerY = WINDOW_HEIGHT / 2;
 
     px[0] = x1 * CS - y1 * SN;
     px[1] = x2 * CS - y2 * SN;
     px[2] = px[0];
     px[3] = px[1];
 
-    py[0] = y1 * CS - x1 * SN;
-    py[1] = y2 * CS - x2 * SN;
+    py[0] = y1 * CS + x1 * SN;
+    py[1] = y2 * CS + x2 * SN;
     py[2] = py[0];
     py[3] = py[1];
 
