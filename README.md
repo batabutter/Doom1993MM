@@ -6,4 +6,5 @@ You can download the SDL 2.0 dll files and lib files from the SDLWiki.
 https://wiki.libsdl.org/SDL2/Introduction
 
 If you're using Visual Studio 2022 (other versions not tested):
-Make sure the SDL2.dll file in the debug section where your executable is located. 
+Make sure the SDL2.dll file in the debug section where your executable is located.
+This can be done by either entering a comand in the Post Build Events or manually copy-pasting the file into the folder.
